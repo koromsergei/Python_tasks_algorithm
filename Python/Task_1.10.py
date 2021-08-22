@@ -1,5 +1,3 @@
-
-
 n = int(input())
 x = list()
 for i in range(n):
