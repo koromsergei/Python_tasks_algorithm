@@ -1,5 +1,3 @@
-
-
 n = int(input())
 x = list()
 for i in range(n):
@@ -7,6 +5,5 @@ for i in range(n):
     x.append(a)
 for i in range(n):
     for j in range(x[i]):
-       
-
+#чета изменил)
 #if x[i][j]==a or x[i][j]==n or x[i][j]==t or x[i][j]==o or x[i][j]==n:
