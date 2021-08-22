@@ -1,8 +1,11 @@
+
+
 n = int(input())
 x = list()
 for i in range(n):
     a = tuple(input())
     x.append(a)
+
 #for i in range(n):
     #for j in range(x[i]):
 
