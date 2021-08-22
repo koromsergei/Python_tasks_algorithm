@@ -15,5 +15,5 @@ for i in range(n):
 
 #чета изменил)
 #и еще добавил
-
+#привет как дела
 #if x[i][j]==a or x[i][j]==n or x[i][j]==t or x[i][j]==o or x[i][j]==n:
