@@ -1,0 +1,5 @@
+c=input("Введите символ а")
+d=input("Введите символ b")
+a=int(c)
+b=int(d)
+print(a+b)
