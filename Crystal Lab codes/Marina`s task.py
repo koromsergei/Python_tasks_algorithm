@@ -23,7 +23,7 @@ stop = int(input('Введите правую границу интервала'
 step = int(input('Введите шаг'))
 """
 start = 0
-stop = 1200
+stop = 1150
 step = 50
 
 i = start
@@ -45,8 +45,8 @@ while j+1 != len(dec):
         if dec[j] < x[i] < dec[j + 1]:
             m.append(x[i])
             count += 1
-    m[:] = count * m[:]
-    temp_var = np.sum(m)
+
+    temp_var = np.sum(m) * count
     sum_prod += temp_var
     temp_var = 0
     m.clear()
@@ -54,21 +54,21 @@ while j+1 != len(dec):
     j += 1
 
 count: int = 0
-
+m.clear()
 for k in range(len(x)):
     if x[k] > dec[len(dec)-1]:
         count += 1
         m.append(x[k])
 
-m[:] = count * m[:]
-temp_var = np.sum(m)
+
+temp_var = np.sum(m) * count
 sum_prod += temp_var
 weight.append(count)
 
-summa = np.sum(weight)
+summa = np.sum(np.dot(weight,weight))
 PDI = sum_prod / me / summa
 print("PDI is: ", PDI)
-print(sum_prod / summa)
+print("Средневзвешанное:", sum_prod / summa)
 x1 = np.array(x)
 a = np.hstack(x1)
 plt.hist(a, bins=100, weights=np.ones(len(x1))*100 / len(x1))
