@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-#import pylab as pl
+import pylab as pl
 import matplotlib.pyplot as plt
 import statistics
 #sheet_n = input('Введите имя таблицы')
@@ -11,12 +11,11 @@ x = DATA["Length"]
 me = statistics.mean(x)  #  mean :)
 SD = np.std(x)  #  Standard Deviation
 CV = (SD / me) * 100
-#PDI =
+
 print("Mean is: ", me)
 print("Standard Deviation is: ", SD)
 print("The coefficient of variation is: ", CV, "%")
 
-#y = DATA['Weight']
 """
 start = int(input('Введите левую границу интервала'))
 stop = int(input('Введите правую границу интервала'))
@@ -65,17 +64,17 @@ temp_var = np.sum(m) * count
 sum_prod += temp_var
 weight.append(count)
 
-summa = np.sum(np.dot(weight,weight))
+summa = np.sum(np.dot(weight, weight))
 PDI = sum_prod / me / summa
 print("PDI is: ", PDI)
 print("Средневзвешанное:", sum_prod / summa)
 x1 = np.array(x)
 a = np.hstack(x1)
-plt.hist(a, bins=100, weights=np.ones(len(x1))*100 / len(x1))
-plt.show()
+plt.hist(a, bins=100, weights=np.ones(len(x1))*100 / len(x1),width = 100)
+#x.hist(width = 1000)
 
-#x.hist(bins=100)
+np.histogram(x)
 #pl.suptitle("Au(30) / Si(90) структура 3")
+plt.xlim([0,1500])
 
-#s = list(set(weight))
-#MW = np.dot(s, s) / len(x)  # mean of weight
+plt.show()
