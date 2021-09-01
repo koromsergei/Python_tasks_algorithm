@@ -15,18 +15,22 @@ def get_spectra(path_file):
 
 
 
-file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_143.spc" #спектр от зеркала
+file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\30 90 spec 800 obr 1 3x3.spc" #  спектр от зеркала
 [x1,y1] = get_spectra (file)
 
+"""
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_140.spc" #темновой спектр 
 [x2,y2] = get_spectra (file)
 
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_131.spc"
 [x,y] = get_spectra (file)
-plt.plot (x,(y-y2)/(y1-y2), label = 'Au_30нм/Si_180нм rare')# конечный спектр
+"""
 
 
-plt.xlim(450,950)
+
+plt.plot (x1, y1, label = 'Au_30нм/Si_180нм rare')# конечный спектр
+
+#plt.xlim(450,950)
 plt.xlabel("Длина волны, нм")
 plt.ylabel("Интенсивность, отн.ед.")
 # plt.ylim(75,1000)
