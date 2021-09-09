@@ -19,7 +19,7 @@ print("Range", spc_dark_cur_data.x.min(), '...', spc_dark_cur_data.x.max(), spc_
 """
 # %%
 
-spc_filename = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\30 90 spec 800 obr 1 3x3.spc"
+spc_filename = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\30 90 spec 800 obr 1 3x3.spc"
 spc_data = spc.File(spc_filename)
 x = spc_data.x[::-1]  # wavelength or wavenumber
 
@@ -43,7 +43,7 @@ print("Scan area:", y_shape, 'x', z_shape, 'points')
 
 # %%
 
-Lambda = 1030
+Lambda = 800
 # Lambda = np.linspace(1500, 1600, 51)  # nm
 title = r"$\lambda$ = " + str(Lambda) + " nm"
 res = []
@@ -142,7 +142,7 @@ fig.show()
 # %%
 
 # plt.title(title)
-plt.imshow(res / res.max(), origin='lower',
+plt.imshow(res, origin='lower',
            #            vmin=0,vmax=1,
            extent=[0, spc_data.fzinc * (y_shape - 1), 0, spc_data.fwinc * (z_shape - 1)])
 plt.xlabel(r"$x, \mu m$")
