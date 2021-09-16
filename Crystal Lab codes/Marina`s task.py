@@ -8,6 +8,7 @@ sheet_n = '10sec-20kHz'
 
 DATA = pd.read_excel("results_frequency_10sec.xlsx", sheet_name=sheet_n, dtype={'Length': float})
 x = DATA["Length"]
+
 me = statistics.mean(x)  #  mean :)
 SD = np.std(x)  #  Standard Deviation
 CV = (SD / me) * 100
