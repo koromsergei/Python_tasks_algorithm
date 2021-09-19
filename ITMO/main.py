@@ -4,7 +4,7 @@ import pylab as pl
 import matplotlib.pyplot as plt
 import statistics
 # DATA = pd.read_excel("stud1.xlsx", dtype={'Step': int, 'Intensity': float})
-DATA = pd.read_excel("stud1.xlsx")
+DATA = pd.read_excel("stud2.xlsx")
 x = DATA["Step"]
 y = DATA["Intensity"]
 x_s = DATA["Inter_w"].dropna()
@@ -14,7 +14,6 @@ count = 0
 """
 xvals = np.linspace(200, 800, 516)
 #f = np.polyval(x_fit, xvals)
-
 """
 """
 xx = x[360:]
@@ -34,5 +33,6 @@ plt.plot(x_1, y)
 #plt.xlim(200, 800)
 plt.xlabel('Wavelength, nm')
 plt.ylabel('Intensity Nd, (a.u.)')
-plt.show()
 
+plt.savefig('Calibration_2_wavelength.png')
+plt.show()
