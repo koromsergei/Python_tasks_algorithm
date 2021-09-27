@@ -10,14 +10,14 @@ def transition (x):
     energ = 1239.85 / x_new
     return x_new, energ
 
-name_x = "5_kV.xlsx"
+name_x = "20_kV.xlsx"
 DATA = pd.read_excel(name_x)
 x = DATA["Step"]
 y = DATA["Intensity"]
 lmbd, E = transition(x)
-plt.title(name_x)
+plt.title('20 kV')
 plt.xlabel('Energy, eV')
 plt.ylabel('Intensity (a.u.)')
 plt.plot(E, y)
-#plt.savefig('5kV.png')
+#plt.savefig('20kV.png')
 plt.show()
