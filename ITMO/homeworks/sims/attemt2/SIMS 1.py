@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pylab as pl
 import matplotlib.pyplot as plt
-RFS = 2.2973278814682523e+23
+RFS = 8.63590989920847e+21
 """
 ЭТА ПРОГА НАХОДИТ ЗАВИСИМОСТЬ КОНЦЕНТРАЦИИ ПРИМЕСИ 
 ОТ ГЛУБИНЫ ЗАЛЕГАНИЯ В ЭТАЛОНЕ
