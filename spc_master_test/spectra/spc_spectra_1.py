@@ -1,5 +1,6 @@
 import pandas as pd
 import spc
+import copy
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.signal import savgol_filter
@@ -26,7 +27,6 @@ file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master
 x1 = x_1.tolist()
 y1 = y_1.tolist()
 
-i = 0
 n = len(y1)
 y1_new = []
 x1_new = []
@@ -37,13 +37,14 @@ for i in range(n - 1):
         x1_new.append(x1[i])
 
 
+
 y_1_interp = np.interp(x1, x1_new, y1_new)
 
 #print(y1_new)
 y_glass_interp = np.interp(x1_new, x_glass, y_glass)
 #plt.plot (x1, y1 / y2, label = 'Au_30нм/Si_180нм rare')# конечный спектр
 #plt.plot(x1_new, y1_new)# конечный спектр
-plt.plot(x1, y1)# конечный спектр
+plt.plot(x1_new, y1_new)# конечный спектр
 
 plt.xlim(450, 900)
 plt.xlabel("Длина волны, нм")
