@@ -1,5 +1,5 @@
 # %%
-
+import csv
 import spc
 import matplotlib.pyplot as plt
 import numpy as np
@@ -7,19 +7,8 @@ import scipy.interpolate as intp
 from scipy.signal import savgol_filter
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
-# %%
-"""
-# #dark current file
-spc_dark_cur_filename = "D:/Documents/YandexDisk/ITMO/exp_data/2020-12-23/Point_3_3_sec_30x30.spc"
-spc_dark_cur_data = spc.File(spc_dark_cur_filename)
-print("SPC dark current file is readed")
-print("Range", spc_dark_cur_data.x.min(), '...', spc_dark_cur_data.x.max(), spc_dark_cur_data.xlabel)
-"""
-# %%
-
-spc_filename = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\maps\array.spc"
+spc_filename = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\maps\30 90 spec 600 obr 1 10x10.spc"
 spc_data = spc.File(spc_filename)
 x = spc_data.x[::-1]  # wavelength or wavenumber
 
@@ -37,6 +26,9 @@ val_label = spc_data.ylabel  # y label
 y = np.linspace(0, y_shape - 1, num=y_shape, dtype=int)
 z = np.linspace(0, z_shape - 1, num=z_shape, dtype=int)
 
+
+
+
 print("SPC data file is readed")
 print("Range", x.min(), '...', x.max(), x_label)
 print("Scan area:", y_shape, 'x', z_shape, 'points')
@@ -49,10 +41,22 @@ title = r"$\lambda$ = " + str(Lambda) + " nm"
 res = []
 for j in z:
     y_val = []
+
     for i in y:
         y_val.append(spec[j, i](Lambda).sum())
     res.append(np.array(y_val))
 res = np.array(res)
+
+np.savetxt('example_1.txt', res)
+res1 = np.loadtxt('example_2.txt')
+
+
+"""
+with open("30 180 new.csv") as file_name:
+    res1 = np.loadtxt(file_name, delimiter=",")
+"""
+
+
 
 # %%
 
@@ -81,7 +85,7 @@ fig1.update_layout(
 
 )
 
-fig1.show()
+#fig1.show()
 
 # %%
 
@@ -109,7 +113,7 @@ fig2.update_layout(
     )
 
 )
-fig2.show()
+#fig2.show()
 
 # %%
 
@@ -134,7 +138,7 @@ fig.add_trace(go.Scatter(x=x, y=data_point,
 fig.add_trace(go.Scatter(x=x, y=data_savgol,
                          mode='lines',
                          name='SavGol filtered'))
-fig.show()
+#fig.show()
 
 # %%
 
@@ -147,7 +151,7 @@ plt.imshow(res, origin='lower',
            extent=[0, spc_data.fzinc * (y_shape - 1), 0, spc_data.fwinc * (z_shape - 1)])
 plt.xlabel(r"$x, \mu m$")
 plt.ylabel(r"$y, \mu m$")
-cb = plt.colorbar()
+cb = plt.colorbar(shrink=0.9)
 cb.ax.set_ylabel("Intensity, a.u.")
 plt.show()
 

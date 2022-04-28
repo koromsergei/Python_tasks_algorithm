@@ -15,11 +15,16 @@ def get_spectra(path_file):
 from scipy import integrate
 
 
-I=[12,10,8,6]
+I = [12, 10, 8, 6]
 array = []
 
-
-
+"""
+Id
+темновой ток
+"""
+file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-2022_03_10-ID_64.spc"
+[xd, yd] = get_spectra (file)
+xd, yd = 0, 0
 
 """
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_57.spc"
@@ -34,47 +39,50 @@ array.append(v)
 
 """
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_58.spc"
-[x,y] = get_spectra (file)
+[x, y] = get_spectra (file)
 
-a=x
-b=y
-v = integrate.trapz(a, b)
+a = x - xd
+b = y - yd
+v = integrate.trapz(b, a)
 print(v)
 array.append(v)
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_59.spc"
-[x,y] = get_spectra (file)
+[x, y] = get_spectra (file)
 
-a=x
-b=y
-v = integrate.trapz(a, b)
+a = x - xd
+b = y - yd
+v = integrate.trapz(b, a)
 print(v)
 array.append(v)
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_60.spc"
-[x,y] = get_spectra (file)
+[x, y] = get_spectra (file)
 
-a=x
-b=y
-v = integrate.trapz(a, b)
+a = x - xd
+b = y - yd
+v = integrate.trapz(b, a)
 print(v)
 array.append(v)          
 file = "F:\ITMO UNIVERSITY\CRYSTAL LAB\Полезные программы\spc_master_test\Spectrum_(LS6)-2021_05_04-ID_61.spc"
-[x,y] = get_spectra (file)
+[x, y] = get_spectra (file)
 
-a=x
-b=y
-v = integrate.trapz(a, b)
+a = x - xd
+b = y - yd
+v = integrate.trapz(b, a)
 print(v)
 array.append(v)
-pylab.loglog (array,I,'go')# конечный спектр
+
+power = [6, 8, 10, 12]
+
+pylab.loglog (I, array, 'go')# конечный спектр
 
 from scipy import stats
 
-X=np.log(array)
-Y=np.log(I)
+X = np.log(array)
+Y = np.log(I)
 slope, intercept, r_value, p_value, std_err = stats.linregress(X,Y)
-line = slope*X+intercept
+line = slope * X+ intercept
 
-plt.plot(line)
+#plt.plot(line)
 
 
 """
@@ -85,7 +93,7 @@ pylab.loglog(ya)
 plt.xlabel("Wavelength, nm")
 plt.ylabel("Intensity, a.u.")
 
-plt.legend()
+#plt.legend()
 plt.show()
 
 #plt.savefig('DF_30/180_obr2_str2.png')

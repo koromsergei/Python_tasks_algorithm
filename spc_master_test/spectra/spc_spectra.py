@@ -21,7 +21,8 @@ y_glass = y_gl.tolist()
 """
 спектр частицы
 """
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-2022_02_10-ID_13.spc"
+file_name = "2021_04_18-ID_04.spc"
+file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name
 [x_1, y_1] = get_spectra (file)
 x1 = x_1.tolist()
 y1 = y_1.tolist()
@@ -45,12 +46,16 @@ y_glass_interp = np.interp(x1_new, x_glass, y_glass)
 #plt.plot(x1_new, y1_new)# конечный спектр
 plt.plot(x1, y1)# конечный спектр
 
-plt.xlim(450, 900)
-plt.xlabel("Длина волны, нм")
-plt.ylabel("Интенсивность, отн.ед.")
-# plt.ylim(75,1000)
-plt.title("2022_02_10-ID_13")
+plt.xlim(450, 950)
+#plt.ylim(-250, 250)
+#plt.xlabel("Длина волны, нм")
+plt.xlabel("Wavelength (nm)")
+#plt.ylabel("Интенсивность, отн.ед.")
+plt.ylabel("Intensity (a. u.)")
+plt.legend()
+#plt.title(file_name)
 plt.show()
+
 
 #plt.savefig('DF_30/180_obr2_str2.png')
 #plt.savefig('Spectrum_(LS6)-2021_05_04-ID_35')
