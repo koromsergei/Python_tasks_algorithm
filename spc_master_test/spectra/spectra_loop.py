@@ -17,17 +17,17 @@ def get_spectra(path_file):
 спектр частицы
 """
 lim = 93
-for j in range(33, 37, 1):
+for j in range(89, 118, 1):
     i = str(j)
-    file_name = "2022_03_10-ID_" + i +".spc"
+    file_name = "2022_04_30-ID_" + i +".spc"
     file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name
     [x_1, y_1] = get_spectra (file)
     x1 = x_1.tolist()
     y1 = y_1.tolist()
     y1new = [i / 2 for i in y1]
     fig = plt.figure()
-    np.savetxt('x1 '+  str(i)+ ' .txt', x1)
-    np.savetxt('y1 ' + str(i)+ ' .txt', y1)
+    np.savetxt('x '+  str(i)+ ' .txt', x1)
+    np.savetxt('y ' + str(i)+ ' .txt', y1)
 
     plt.plot(x1, y1)# конечный спектр
 

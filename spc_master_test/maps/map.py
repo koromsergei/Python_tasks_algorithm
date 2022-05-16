@@ -8,7 +8,7 @@ from scipy.signal import savgol_filter
 import plotly.express as px
 import plotly.graph_objects as go
 
-spc_filename = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\maps\30 90 spec 600 obr 1 10x10.spc"
+spc_filename = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\maps\10_100.spc"
 spc_data = spc.File(spc_filename)
 x = spc_data.x[::-1]  # wavelength or wavenumber
 
@@ -35,7 +35,7 @@ print("Scan area:", y_shape, 'x', z_shape, 'points')
 
 # %%
 
-Lambda = 600
+Lambda = 525
 # Lambda = np.linspace(1500, 1600, 51)  # nm
 title = r"$\lambda$ = " + str(Lambda) + " nm"
 res = []
@@ -60,7 +60,7 @@ with open("30 180 new.csv") as file_name:
 
 # %%
 
-fig1 = px.imshow((res / res.max()),
+fig1 = px.imshow((res1 / res1.max()),
                  labels=dict(x=r"$x, \mu m$",
                              y=r"$y, \mu m$",
                              color="Intensity, a.u.",
@@ -89,7 +89,7 @@ fig1.update_layout(
 
 # %%
 
-fig2 = px.imshow((res / res.max()),
+fig2 = px.imshow((res1 / res1.max()),
                  labels=dict(x="x",
                              y="y",
                              color="Intensity, a.u.",
@@ -146,7 +146,7 @@ fig.add_trace(go.Scatter(x=x, y=data_savgol,
 # %%
 
 # plt.title(title)
-plt.imshow(res, origin='lower',
+plt.imshow(res1, origin='lower',
            #            vmin=0,vmax=1,
            extent=[0, spc_data.fzinc * (y_shape - 1), 0, spc_data.fwinc * (z_shape - 1)])
 plt.xlabel(r"$x, \mu m$")
