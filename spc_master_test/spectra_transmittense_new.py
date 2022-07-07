@@ -14,11 +14,11 @@ def get_spectra(path_file):
     return x, y
 
 
-file_name = "2022_06_09-ID_104.spc"#спектр частицы, прошедшей через Rh
-file_name_dark = "2022_06_09-ID_11.spc"#темновой
+file_name = "2022_06_22-ID_71.spc"#спектр частицы, прошедшей через Rh
+file_name_dark = "2022_06_22-ID_47.spc"#темновой
 
-file_name_lamp = "2022_06_09-ID_72.spc"#спектр частицы без всего
-file_name_glass = "2022_06_09-ID_103.spc"#спектр частицы через стекло или чтекло с водой
+file_name_lamp = "2022_06_22-ID_72.spc"#спектр частицы без всего
+file_name_glass = "2022_06_22-ID_67.spc"#спектр частицы через стекло или чтекло с водой
 
 
 
@@ -44,9 +44,9 @@ file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master
 xdark = x_dark.tolist()
 ydark = y_dark.tolist()
 
-x_lim = 700
+x_lim = 400
 y_lim = len(y_dark)
-#y_lim = 1000
+#y_lim = 1700
 
 
 
@@ -74,6 +74,7 @@ def transmittion(y):
     #yt = (y - y_dark[x_lim:y_lim]) / ((y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim]) * (y_glass[x_lim:y_lim]  - y_dark[x_lim:y_lim] ))# учет стекла
     #yt = (y - y_dark[x_lim:y_lim]) / (y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim])
     yt = (y - y_dark[x_lim:y_lim]) / (y_glass[x_lim:y_lim]  - y_dark[x_lim:y_lim])
+    #yt = (y - y_dark) / (y_glass - y_dark)
     return yt
 
 
@@ -81,6 +82,7 @@ def transmittion(y):
 #y_max = max(transmittion(y1[l_lim:r_lim]))
 #plt.plot(x1[0:2102], transmittion(y1[0:2102]) / max(transmittion(y1[0:2102])), linewidth = 2)# конечный спектр
 plt.plot(x1[x_lim:y_lim], transmittion(y1[x_lim:y_lim]) / max(transmittion(y1[x_lim:y_lim])), linewidth = 2)# конечный спектр
+#plt.plot(x1[x_lim:y_lim], transmittion(y1[x_lim:y_lim]), linewidth = 2)# конечный спектр
 #plt.plot(x_2, y_2, linewidth = 3, label = 'Si NP')#
 #plt.plot(x_3, y_3, linewidth = 2,  label = 'Au NP')#
 #plt.plot(xdye, ydye)# конечный спектр
@@ -89,7 +91,7 @@ np.savetxt('y ' + file_name + ' .txt', y1)
 
 
 plt.xlim(450, 900)
-#plt.ylim(-0.2, 0.2)
+#plt.ylim(0.8, 1.1)
 #plt.xlabel("Длина волны, нм")
 plt.xlabel("Wavelength (nm)")
 #plt.ylabel("Интенсивность, отн.ед.")
