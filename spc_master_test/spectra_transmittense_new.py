@@ -14,11 +14,11 @@ def get_spectra(path_file):
     return x, y
 
 
-file_name = "2022_06_22-ID_71.spc"#спектр частицы, прошедшей через Rh
-file_name_dark = "2022_06_22-ID_47.spc"#темновой
+file_name = "2022_07_10-ID_97.spc"#спектр частицы, прошедшей через Rh
+file_name_dark = "2022_07_10-ID_47.spc"#темновой
 
-file_name_lamp = "2022_06_22-ID_72.spc"#спектр частицы без всего
-file_name_glass = "2022_06_22-ID_67.spc"#спектр частицы через стекло или чтекло с водой
+file_name_lamp = "2022_07_10-ID_01.spc"#спектр частицы без всего
+file_name_glass = "2022_07_10-ID_94.spc"#спектр частицы через стекло или чтекло с водой
 
 
 
@@ -44,7 +44,7 @@ file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master
 xdark = x_dark.tolist()
 ydark = y_dark.tolist()
 
-x_lim = 400
+x_lim = 100
 y_lim = len(y_dark)
 #y_lim = 1700
 

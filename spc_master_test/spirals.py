@@ -14,12 +14,12 @@ def get_spectra(path_file):
     return x, y
 
 
-file_name_CCW = "2022_07_07-ID_92.spc"#спектр пропускания
-file_name_CW = "2022_07_07-ID_93.spc"#спектр пропускания
+file_name_CCW = "2022_07_10-ID_41.spc"#спектр пропускания
+file_name_CW = "2022_07_10-ID_42.spc"#спектр пропускания
 
-file_name_dark = "2022_07_07-ID_09.spc"#темновой ток
-file_name_lamp_CW = "2022_07_07-ID_69.spc"#спектр лампы
-file_name_lamp_CCW = "2022_07_07-ID_68.spc"#спектр лампы
+file_name_dark = "2022_07_10-ID_07.spc"#темновой ток
+file_name_lamp_CW = "2022_07_10-ID_42.spc"#спектр лампы
+file_name_lamp_CCW = "2022_07_10-ID_41.spc"#спектр лампы
 
 
 
@@ -92,17 +92,15 @@ ylampCCW = y_lamp1 .tolist()
 
 
 def transmittionCW(y):
-    #yt = (y - y_dark[x_lim:y_lim]) / ((y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim]) * (y_glass[x_lim:y_lim]  - y_dark[x_lim:y_lim] ))# учет стекла
-    #yt = (y - y_dark[x_lim:y_lim]) / (y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim])
     yt = (y - y_dark[x_lim:y_lim]) / (y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim])
-    #yt = (y - y_dark) / (y_glass - y_dark)
+    #yt = (y - y_dark[x_lim:y_lim])
+
     return yt
 
 def transmittionCCW(y):
-    #yt = (y - y_dark[x_lim:y_lim]) / ((y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim]) * (y_glass[x_lim:y_lim]  - y_dark[x_lim:y_lim] ))# учет стекла
-    #yt = (y - y_dark[x_lim:y_lim]) / (y_lamp[x_lim:y_lim]  - y_dark[x_lim:y_lim])
     yt = (y - y_dark[x_lim:y_lim]) / (y_lamp1[x_lim:y_lim]  - y_dark[x_lim:y_lim])
-    #yt = (y - y_dark) / (y_glass - y_dark)
+    #yt = (y - y_dark[x_lim:y_lim])
+
     return yt
 
 
