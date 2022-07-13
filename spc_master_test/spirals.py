@@ -14,8 +14,8 @@ def get_spectra(path_file):
     return x, y
 
 
-file_name_CCW = "2022_07_10-ID_41.spc"#спектр пропускания
-file_name_CW = "2022_07_10-ID_42.spc"#спектр пропускания
+file_name_CCW = "2022_07_10-ID_04"#спектр пропускания
+file_name_CW = "2022_07_10-ID_03"#спектр пропускания
 
 file_name_dark = "2022_07_10-ID_07.spc"#темновой ток
 file_name_lamp_CW = "2022_07_10-ID_42.spc"#спектр лампы
@@ -31,7 +31,7 @@ file_name_lamp_CCW = "2022_07_10-ID_41.spc"#спектр лампы
 спектр пропускания CCW
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_CCW
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_CCW +".spc"
 [x_1, y_1] = get_spectra (file)
 xCCW = x_1.tolist()
 yCCW = y_1.tolist()
@@ -40,7 +40,7 @@ yCCW = y_1.tolist()
 спектр пропускания CW
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_CW
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_CW + ".spc"
 [x_2, y_2] = get_spectra (file)
 xCW = x_2.tolist()
 yCW = y_2.tolist()
@@ -54,7 +54,7 @@ yCW = y_2.tolist()
 Темновой ток
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_dark
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_dark
 [x_dark, y_dark] = get_spectra (file)
 xdark = x_dark.tolist()
 ydark = y_dark.tolist()
@@ -69,7 +69,7 @@ y_lim = len(y_dark)
 спектр лампы CW
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_lamp_CW
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_lamp_CW
 [x_lamp , y_lamp ] = get_spectra (file)
 xlampCW = x_lamp .tolist()
 ylampCW = y_lamp .tolist()
@@ -79,7 +79,7 @@ ylampCW = y_lamp .tolist()
 спектр лампы CCW
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_lamp_CCW
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_lamp_CCW
 [x_lamp1, y_lamp1 ] = get_spectra (file)
 xlampCCW = x_lamp1 .tolist()
 ylampCCW = y_lamp1 .tolist()
@@ -107,15 +107,19 @@ def transmittionCCW(y):
 #y_max = max(transmittion(y1[l_lim:r_lim]))
 #plt.plot(x1[0:2102], transmittion(y1[0:2102]) / max(transmittion(y1[0:2102])), linewidth = 2)# конечный спектр
 #plt.plot(xCW[x_lim:y_lim], transmittion(yCW[x_lim:y_lim]) / max(transmittion(yCW[x_lim:y_lim])), linewidth = 2, label = 'CW')# конечный спектр
-plt.plot(xCW[x_lim:y_lim], transmittionCW(yCW[x_lim:y_lim]), linewidth = 2, label = 'CW')# конечный спектр
+#plt.plot(xCW[x_lim:y_lim], transmittionCW(yCW[x_lim:y_lim]), linewidth = 2, label = 'CW')# конечный спектр
 #plt.plot(xCCW[x_lim:y_lim], transmittion(yCCW[x_lim:y_lim]) / max(transmittion(yCCW[x_lim:y_lim])), linewidth = 2, label = 'CCW')# конечный спектр
-plt.plot(xCCW[x_lim:y_lim], transmittionCCW(yCCW[x_lim:y_lim]), linewidth = 2, label = 'CCW')# конечный спектр
+#plt.plot(xCCW[x_lim:y_lim], transmittionCCW(yCCW[x_lim:y_lim]), linewidth = 2, label = 'CCW')# конечный спектр
 
 
-np.savetxt('x ' + file_name_CW + ' .txt', xCW)
-np.savetxt('y ' + file_name_CW + ' .txt', yCW)
-np.savetxt('x ' + file_name_CCW + ' .txt', xCCW)
-np.savetxt('y ' + file_name_CCW + ' .txt', yCCW)
+g = 2 * (transmittionCCW(yCCW[x_lim:y_lim]) - transmittionCW(yCW[x_lim:y_lim])) / (transmittionCCW(yCCW[x_lim:y_lim]) + transmittionCW(yCW[x_lim:y_lim]))
+
+plt.plot(xCCW[x_lim:y_lim], g, label = 'g factor')
+
+np.savetxt('xCW_' + file_name_CW + '.txt', xCW)
+np.savetxt('yCW_' + file_name_CW + ' .txt', yCW)
+np.savetxt('xCCW_' + file_name_CCW + ' .txt', xCCW)
+np.savetxt('yCCW_' + file_name_CCW + ' .txt', yCCW)
 
 plt.xlim(350, 1000)
 #plt.ylim(0.8, 1.1)
@@ -125,4 +129,5 @@ plt.xlabel("Wavelength (nm)")
 plt.ylabel("Intensity (a. u.)")
 plt.legend()
 plt.title(file_name_CW)
+plt.savefig(file_name_CW)
 plt.show()

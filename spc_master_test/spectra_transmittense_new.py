@@ -14,11 +14,11 @@ def get_spectra(path_file):
     return x, y
 
 
-file_name = "2022_07_10-ID_97.spc"#спектр частицы, прошедшей через Rh
-file_name_dark = "2022_07_10-ID_47.spc"#темновой
+file_name = "2022_07_10-ID_97.spc"#  спектр частицы, прошедшей через Rh
+file_name_dark = "2022_07_10-ID_47.spc"#  темновой
 
-file_name_lamp = "2022_07_10-ID_01.spc"#спектр частицы без всего
-file_name_glass = "2022_07_10-ID_94.spc"#спектр частицы через стекло или чтекло с водой
+file_name_lamp = "2022_07_10-ID_01.spc"#  спектр частицы без всего
+file_name_glass = "2022_07_10-ID_94.spc"#  спектр частицы через стекло или чтекло с водой
 
 
 
@@ -29,7 +29,7 @@ file_name_glass = "2022_07_10-ID_94.spc"#спектр частицы через 
 спектр частицы, прошедшей через Rh
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name
 [x_1, y_1] = get_spectra (file)
 x1 = x_1.tolist()
 y1 = y_1.tolist()
@@ -39,7 +39,7 @@ y1 = y_1.tolist()
 Темновой ток
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_dark
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_dark
 [x_dark, y_dark] = get_spectra (file)
 xdark = x_dark.tolist()
 ydark = y_dark.tolist()
@@ -54,7 +54,7 @@ y_lim = len(y_dark)
 ФЛ частицы без стекла
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_lamp
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_lamp
 [x_lamp , y_lamp ] = get_spectra (file)
 xlamp = x_lamp .tolist()
 ylamp = y_lamp .tolist()
@@ -63,7 +63,7 @@ ylamp = y_lamp .tolist()
 ФЛ частицы со стеклом
 """
 
-file = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_glass
+file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name_glass
 [x_glass, y_glass ] = get_spectra (file)
 xglass = x_glass.tolist()
 yglass = y_glass.tolist()
