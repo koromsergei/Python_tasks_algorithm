@@ -28,6 +28,9 @@ file_name_glass = "2022_07_10-ID_94.spc"#  спектр частицы чере�
 """
 спектр частицы, прошедшей через Rh
 """
+path_file_1 = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-"
+path_file_2 = r"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-"
+
 
 file = r"C:\Users\79218\Git\Python_tasks_algorithm\spc_master_test\spectra\Spectrum_(LS6)-" + file_name
 [x_1, y_1] = get_spectra (file)
