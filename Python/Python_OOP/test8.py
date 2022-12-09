@@ -8,18 +8,29 @@
 #         print(i, end=" ")
 
 
-lst = [[1, 0, 0, 1, 0], [0, 0, 0, 1, 1], [1, 0, 0, 1, 0], [0, 1, 0, 1, 1], [1, 0, 0, 0, 1]]
-lst_rows = [[0]*5 for i in range(4)]
-print(lst_rows)
+lst_in = [[1, 0, 0, 0, 0], [0, 0, 1, 0, 1], [0, 0, 0, 0, 0], [0, 1, 0, 1, 0], [0, 0, 0, 0, 0]]
 
-j = 0
-k = 0
-for j in range(4):
-    for k in range(5):
-        lst_rows[j][k] = lst[j][k] * lst[j + 1][k]
+for i in range(5):
+    for j in range(5):
+        if lst_in[i][j] != lst_in[j][i]:
+            print("НЕТ")
+            break
+    else:
+        continue
+    break
+else:
+    print("ДА")
 
 
+#
+# for i in range(5):
+#     print(lst_in[i], end="\n")
+#
+# print()
+# for i in range(5):
+#     print(lst_columns[i], end="\n")
+# print()
+# for i in range(5):
+#     print(lst_rows[i], end="\n")
 
 
-
-print(lst_rows)
