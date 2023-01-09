@@ -3,12 +3,24 @@ lst_in_num = [int(i.split()[0]) for i in lst_in]
 lst_in_nam = [i.split()[1] for i in lst_in]
 
 dates_dict = dict.fromkeys(lst_in_num)
-lst_in = [i.split() for i in lst_in]
-test_d = {}
-for i in lst_in:
-    if i[0] not in test_d.keys():
-        test_d[int(i[0])] = i[1]
-    else:
-        break
+temp = []
+for i in dates_dict:
+    for j, val in enumerate(lst_in_num):
+        if val == i:
+            temp.append(lst_in_nam[j])  # ошибка
+    dates_dict[i] = temp  # ошибка
 
-print(test_d)
+
+
+
+
+
+# lst_in = [i.split() for i in lst_in]
+# test_d = {}
+# for i in lst_in:
+#     if i[0] not in test_d.keys():
+#         test_d[int(i[0])] = i[1]
+#     else:
+#         break
+#
+# print(test_d)
