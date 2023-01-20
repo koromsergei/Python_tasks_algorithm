@@ -13,8 +13,10 @@ def foo(s, sep="-"):
 s = input().split()
 temp = []
 for i in s:
-    if set(i) & set(t.keys()) == 0:
-        temp.append(s.pop(i))
+    if set(i.lower()) & set(t.keys()) != 0:
+        temp.append(foo(i.lower()))
+    else:
+        temp.append(i.lower())
 
-print(foo(s) + "".join(s))
-print(foo(s, sep="+"))
+print(temp)
+#print(foo(s, sep="+"))
