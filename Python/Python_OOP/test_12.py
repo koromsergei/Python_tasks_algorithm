@@ -3,15 +3,19 @@ lst_in_num = [int(i.split()[0]) for i in lst_in]
 lst_in_nam = [i.split()[1] for i in lst_in]
 
 dates_dict = dict.fromkeys(lst_in_num)
-temp = []
+
+temp = [[] for i in range(len(dates_dict))]
+_ = 0
 for i in dates_dict:
     for j, val in enumerate(lst_in_num):
         if val == i:
-            temp.append(lst_in_nam[j])  # ошибка
-    dates_dict[i] = temp  # ошибка
+            temp[_].append(lst_in_nam[j])  # ошибка
 
+    dates_dict[i] = temp[_]
+    print(i, ": ", ", ".join(dates_dict[i]), sep="")
+    print("{i}: {\', \'.join(dates_dict[i])}")
 
-
+    _ += 1
 
 
 
