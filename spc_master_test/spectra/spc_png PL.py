@@ -28,7 +28,7 @@ file_name_dark = "Spectrum_(LS6)-2023_01_27-ID_17.spc"
 file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_dark}"
 [xd, y_d] = get_spectra(file)
 
-for i in range(13, 28, 1):
+for i in range(10, 25, 1):
     file_name = f"Spectrum_(LS6)-2023_01_27-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
@@ -40,7 +40,8 @@ for i in range(13, 28, 1):
     plt.ylabel("Intensity, a.u.")
     plt.title(file_name, fontdict={'fontsize': 6.5})
 
-
+    np.savetxt('x ' + str(i) + ' .txt', x)
+    np.savetxt('y ' + str(i) + ' .txt', photolum(y, y_d))
     # plt.legend()
     plt.show()
     # plt.savefig('DF_30/180_obr2_str2.png')

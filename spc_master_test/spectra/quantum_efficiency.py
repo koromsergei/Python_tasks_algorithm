@@ -2,7 +2,7 @@ import spc
 import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 from numpy import trapz
-
+import numpy as np
 """
 измерение квантовой эффективности гибридной структуры
 """
@@ -17,35 +17,60 @@ def get_spectra(path_file):
 
 
 def photolum(y, y_d):
-    y_t = (y - y_d)
+    y_t = y - y_d
     return y_t
 
 
 # Темновой ток
-file_name_dark = "Spectrum_(LS6)-2023_02_14-ID_118.spc"
+file_name_dark = "Spectrum_(LS6)-2023_03_04-ID_02.spc"
 file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_dark}"
 [xd, y_d] = get_spectra(file)
+lim_start = int(len(y_d) / 2)
+lim_end = 700
+y_d = y_d[::-1]
+y_d = y_d[lim_start:lim_end]
+laser_power = [27, 24.4, 22.4, 20, 18.4, 16, 14]  # шаг мощности лазера
+laser_power_mj = [2.7, 2.44, 2.24, 2.0, 1.84, 1.6, 1.4]  # шаг мощности лазера
+laser_power_uj_temp = [i * 1000 for i in laser_power_mj]  # шаг мощности лазера
+laser_power_uj = [0.733, 1.069, 1.836, 3.013, 4.632, 6.646, 9.034]
 
-laser_power = [27, 24.4, 22.4, 20, 18.4, 16, 14, 12]  # шаг мощности лазера
-laser_power_mj = [2.7, 2.44, 2.24, 2.0, 1.84, 1.6, 1.4, 1.2]  # шаг мощности лазера
 inegr_intencity = []
 # Пропускание частицы
-for i in range(69, 77):
+lim_start = int(3274 / 4)
+lim_end = 3274
 
-    file_name = f"Spectrum_(LS6)-2023_02_14-ID_{i}.spc"
+for i in range(90, 100):
+    if i == 92 or i == 93 or i == 94 or i == 98:
+        continue
+    print(i != 92)
+    file_name = f"Spectrum_(LS6)-2023_03_04-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
+
+
+    x = x[::-1]
+    x = x[lim_start:lim_end]
+    y = y[::-1]
+    y = y[lim_start:lim_end]
+    print(len(x))
     inegr_intencity.append(trapz(y, x))
-    plt.plot(x, photolum(y, y_d))
-    plt.ylim(0, 7000)
+    # inegr_intencity.append(trapz(photolum(y, y_d), x))
+    plt.plot(x, y)
+    # plt.ylim(0, 7000)
     plt.xlabel("Wavelength, nm")
     plt.ylabel("Intensity, a.u.")
     plt.title(file_name, fontdict={'fontsize': 6.5})
+    np.savetxt('x ' + str(i) + ' .txt', x)
+    # np.savetxt('y ' + str(i) + ' .txt', photolum(y, y_d))
     # plt.legend()
     plt.show()
 
+
+
+
+
 print(inegr_intencity)
-plt.plot(laser_power_mj, inegr_intencity, "o")
+plt.plot(laser_power_uj, inegr_intencity, "o")
 plt.xscale('log')
 plt.yscale('log')
 # plt.xlabel("Power, mW")
