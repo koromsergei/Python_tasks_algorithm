@@ -32,25 +32,25 @@ y_d = y_d[lim_start:lim_end]
 laser_power = [27, 24.4, 22.4, 20, 18.4, 16, 14]  # шаг мощности лазера
 laser_power_mj = [2.7, 2.44, 2.24, 2.0, 1.84, 1.6, 1.4]  # шаг мощности лазера
 laser_power_uj_temp = [i * 1000 for i in laser_power_mj]  # шаг мощности лазера
-laser_power_uj = [0.733, 1.069, 1.836, 3.013, 4.632, 6.646, 9.034]
+laser_power_uj = [699, 599, 497, 399, 298, 198, 100, 91, 81, 71, 61, 51]
 
 inegr_intencity = []
 # Пропускание частицы
-lim_start = int(3274 / 4)
+lim_start = 2897
+lim_start = 0
+lim_end = 2990
 lim_end = 3274
 
-for i in range(90, 100):
-    if i == 92 or i == 93 or i == 94 or i == 98:
+for i in range(96, 116):
+    if i == 102 or i == 93 or i == 94 or i == 98 or i == 92 or i == 114:
         continue
-    print(i != 92)
     file_name = f"Spectrum_(LS6)-2023_03_04-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
-
-
-    x = x[::-1]
+    print(len(x))
+    # x = x[::-1]
     x = x[lim_start:lim_end]
-    y = y[::-1]
+    # y = y[::-1]
     y = y[lim_start:lim_end]
     print(len(x))
     inegr_intencity.append(trapz(y, x))
@@ -61,7 +61,7 @@ for i in range(90, 100):
     plt.ylabel("Intensity, a.u.")
     plt.title(file_name, fontdict={'fontsize': 6.5})
     np.savetxt('x ' + str(i) + ' .txt', x)
-    # np.savetxt('y ' + str(i) + ' .txt', photolum(y, y_d))
+    np.savetxt('y ' + str(i) + ' .txt', y)
     # plt.legend()
     plt.show()
 
