@@ -1,30 +1,38 @@
-lst_in = ['3 Сергей', '5 Николай', '4 Елена', '7 Владимир', '5 Юлия', '4 Светлана']
-lst_in_num = [int(i.split()[0]) for i in lst_in]
-lst_in_nam = [i.split()[1] for i in lst_in]
+import time
+import numpy as np
+import matplotlib.pyplot as plt
 
-dates_dict = dict.fromkeys(lst_in_num)
+def build_path_gl(axes):
+    cur_crd = []
+    path = []
+    trends = [1] * len(axes)
+    def build_path_in(axes):
+        nonlocal cur_crd
+        nonlocal path
+        cur_ax = axes[-1]
+        if trends[len(axes)-1] == -1:
+            cur_ax = np.flip(cur_ax)
+        for crd in cur_ax:
+            cur_crd.append(crd)
+            if len(axes) > 1:
+                build_path_in(axes[:-1])
+                trends[len(axes)-2] *= -1
+            else:
+                path.append(np.flip(cur_crd))
+            cur_crd.pop(-1)
+    build_path_in(axes)
+    return path
 
-temp = [[] for i in range(len(dates_dict))]
-_ = 0
-for i in dates_dict:
-    for j, val in enumerate(lst_in_num):
-        if val == i:
-            temp[_].append(lst_in_nam[j])  # ошибка
+# X, Y, Z, W = np.array([0, 6, 7]), np.array([2]), np.array([0, 2, 3]), np.array([10, 20, 30])
 
-    dates_dict[i] = temp[_]
-    print(i, ": ", ", ".join(dates_dict[i]), sep="")
-    print("{i}: {\', \'.join(dates_dict[i])}")
+X, Y, Z, W = np.linspace(1, 10, 100), np.linspace(2, 20, 100), np.linspace(3, 30, 100), np.linspace(3, 30, 100)
+start = time.time()
 
-    _ += 1
+p = build_path_gl([X, Y, Z, W])
+print(p)
+print(time.time() - start)
+# ax = plt.figure().add_subplot(projection='3d')
+# ax.plot(*np.array(p)[:,:3].T)
+# ax.plot(*np.array(p).T)
 
-
-
-# lst_in = [i.split() for i in lst_in]
-# test_d = {}
-# for i in lst_in:
-#     if i[0] not in test_d.keys():
-#         test_d[int(i[0])] = i[1]
-#     else:
-#         break
-#
-# print(test_d)
+# plt.show()
