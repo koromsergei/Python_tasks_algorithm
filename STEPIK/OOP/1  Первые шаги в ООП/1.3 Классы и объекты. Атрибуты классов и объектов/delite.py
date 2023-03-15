@@ -24,7 +24,7 @@ def build_path_gl(axes):
     return path
 
 # X, Y, Z = np.arange(0, 3), np.arange(10, 13), np.arange(20, 25)
-X, Y, Z, = np.linspace(0, 3, 10), np.linspace(10, 13, 10), np.linspace(20, 25, 10)
+X, Y, Z, = np.linspace(1, 1, 1), np.linspace(1, 1, 1), np.linspace(1, 1, 1)
 p = build_path_gl([X, X, Z])
 
 ax = plt.figure().add_subplot(projection='3d')
