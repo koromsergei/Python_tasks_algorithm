@@ -13,13 +13,13 @@ class Dialog:
     def __new__(cls, name,  *args, **kwargs):
         __name = name
         if __name == 1:
-            return DialogWindows.__new__(cls)
+            return DialogWindows()
         elif __name == 2:
-            return DialogLinux.__new__(cls)
+            return DialogLinux()
 
     def __init__(self, name):
         self.name = name
 
 
 dlg = Dialog(1)
-print(dlg)
+print(dlg.name_class)
