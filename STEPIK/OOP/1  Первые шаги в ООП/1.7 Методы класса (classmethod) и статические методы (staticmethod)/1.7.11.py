@@ -35,5 +35,6 @@ class Viber:
 
 
 msg = Message('Hello World!')
+print(msg.fl_like)
 Viber.add_message(msg)
 print(Viber.total_message())
