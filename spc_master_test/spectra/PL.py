@@ -16,16 +16,21 @@ def pl(y, y_d):
     y_t = (y - y_d)
     return y_t
 
-file_name = "Spectrum_(LS6)-2023_01_27-ID_24.spc"
-file_name_d = 'Spectrum_(LS6)-2023_01_27-ID_17.spc'
 
-file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
+file_name = "Spectrum_(LS6)-2023_03_13-ID_03.spc"
+file_name_d = 'Spectrum_(LS6)-2023_03_13-ID_02.spc'
+
+# file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
+file = fr"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
 [x, y] = get_spectra(file)
-file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
+
+# file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
+file = fr"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
 [x_d, y_d] = get_spectra(file)
 
 
 plt.plot(x, pl(y, y_d), label='исходный спектр')
+
 plt.show()
 
 np.savetxt('x ' + file_name + ' .txt', x)

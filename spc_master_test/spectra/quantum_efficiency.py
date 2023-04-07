@@ -17,7 +17,8 @@ def get_spectra(path_file):
 
 
 def photolum(y, y_d):
-    y_t = y - y_d
+    # y_t = y - y_d
+    y_t = y
     return y_t
 
 
@@ -37,14 +38,14 @@ laser_power_uj = [699, 599, 497, 399, 298, 198, 100, 91, 81, 71, 61, 51]
 inegr_intencity = []
 # Пропускание частицы
 lim_start = 2897
-lim_start = 0
-lim_end = 2990
-lim_end = 3274
+lim_start = 2660
+# lim_end = 2990
+lim_end = 2740
 
-for i in range(96, 116):
+for i in range(27, 40):
     if i == 102 or i == 93 or i == 94 or i == 98 or i == 92 or i == 114:
         continue
-    file_name = f"Spectrum_(LS6)-2023_03_04-ID_{i}.spc"
+    file_name = f"Spectrum_(LS6)-2023_03_13-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
     print(len(x))
@@ -64,10 +65,6 @@ for i in range(96, 116):
     np.savetxt('y ' + str(i) + ' .txt', y)
     # plt.legend()
     plt.show()
-
-
-
-
 
 print(inegr_intencity)
 plt.plot(laser_power_uj, inegr_intencity, "o")
