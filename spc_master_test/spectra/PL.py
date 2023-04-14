@@ -17,22 +17,22 @@ def pl(y, y_d):
     return y_t
 
 
-file_name = "Spectrum_(LS6)-2023_03_13-ID_03.spc"
-file_name_d = 'Spectrum_(LS6)-2023_03_13-ID_02.spc'
+for i in range(122, 125):
+    file_name = f"Spectrum_(LS6)-2023_04_13-ID_{i}.spc"
+    file_name_d = 'Spectrum_(LS6)-2023_04_13-ID_71.spc'
 
-# file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
-file = fr"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
-[x, y] = get_spectra(file)
+    # file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
+    file = fr"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
+    [x, y] = get_spectra(file)
 
-# file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
-file = fr"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
-[x_d, y_d] = get_spectra(file)
+    # file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
+    file = fr"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_d}"
+    [x_d, y_d] = get_spectra(file)
 
+    plt.plot(x, pl(y, y_d) / max(pl(y, y_d)), label='исходный спектр')
+    plt.title(file_name)
+    plt.show()
 
-plt.plot(x, pl(y, y_d), label='исходный спектр')
-
-plt.show()
-
-np.savetxt('x ' + file_name + ' .txt', x)
-np.savetxt('y ' + file_name + ' .txt', pl(y, y_d))
+    np.savetxt('x ' + file_name + ' .txt', x)
+    np.savetxt('y ' + file_name + ' .txt', pl(y / max(y), y_d))
 

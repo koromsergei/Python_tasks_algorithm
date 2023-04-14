@@ -16,9 +16,9 @@ class StackObj:
         return self.__next
 
     @next.setter
-    def next(self, next):
-        if type(next) is (None, StackObj):
-            self.__next = next
+    def next(self, next_elem):
+        if type(next_elem) in (None, StackObj):
+            self.__next = next_elem
 
 
 class Stack:
@@ -29,28 +29,21 @@ class Stack:
     def push(self, obj: StackObj):
         if self.top is None:
             self.top = obj
-            return
-
-        if self.last is None:
             self.last = obj
-
-
-
-        obj.next
-
+            return
+        self.last.next = obj
+        self.last = obj
+        return
 
     def pop(self):
-        pass
+        self.last = None
 
-    def get_data(self, link=None):
-        if link is None:
-            link = self.top
-        if link.next is None:
-            return link.data
-        else:
-            # self.lst.append(link.next)
+    def get_data(self):
+        link = self.top
+        print(link.data, end=' ')
+        while link is not None:
+            print(link.next.data, end=' ')
             link = link.next
-            return self.get_data(link)
 
 
 st = Stack()
@@ -58,4 +51,7 @@ st.push(StackObj('obj1'))
 st.push(StackObj('obj2'))
 st.push(StackObj('obj3'))
 st.push(StackObj('obj4'))
+print(st.last.next, st.top.next.next.data)
 print(st.get_data())
+# st.pop()
+# print(st.get_data())
