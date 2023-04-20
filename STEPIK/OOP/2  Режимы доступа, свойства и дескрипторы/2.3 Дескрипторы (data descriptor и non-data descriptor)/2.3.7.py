@@ -43,3 +43,5 @@ class RegisterForm:
 
 
 
+from = RegisterForm('Login', 'Password', 'email')
+
