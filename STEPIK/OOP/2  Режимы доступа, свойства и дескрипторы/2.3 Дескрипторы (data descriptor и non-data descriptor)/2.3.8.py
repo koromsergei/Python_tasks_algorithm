@@ -41,7 +41,7 @@ class PriceValue:
 
 class Product:
     name = StringValue()
-    price = StringValue()
+    price = PriceValue()
 
     def __init__(self, name: str, price: float):
         self.name = name
@@ -57,11 +57,6 @@ class Product:
         setattr(instance, self.name, value)
 
 
-
-
-
-
-
 class SuperShop:
     def __init__(self, name: str):
         self.name = name
@@ -72,3 +67,11 @@ class SuperShop:
 
     def remove_product(self, product: Product):
         self.goods.remove(product)
+
+
+shop = SuperShop('Nike')
+shop.add_product(Product('Airmax', 9500))
+shop.add_product(Product('Jordan', 1270))
+print(shop.name)
+shop.goods[1].name = 123
+print(shop.goods[1].name, shop.goods[1].price)
