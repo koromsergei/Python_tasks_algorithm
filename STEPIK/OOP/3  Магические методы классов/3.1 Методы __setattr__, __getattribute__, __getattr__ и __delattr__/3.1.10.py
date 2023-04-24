@@ -1,9 +1,12 @@
 class Mechanical:
+    date = None
+
     def __init__(self, date):
         self.date = date
 
     def __setattr__(self, key, value):
-        super().__setattr__(key, value)
+        if self.date is None:
+            super().__setattr__(key, value)
 
 
 class Aragon:
@@ -17,4 +20,3 @@ class Calcium:
 
 
 m = Mechanical(2023)
-print(m.date)
