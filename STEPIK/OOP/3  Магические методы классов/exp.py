@@ -1,15 +1,3 @@
-class A:
-    def __init__(self, a):
-        self.__a = a
+from random import randint
 
-    @property
-    def a(self):
-        return self.__a
-
-    @a.setter
-    def a(self, value):
-        self.__a = value
-
-
-ad = A(12)
-print(ad.a)
+print(randint(1, 3))
