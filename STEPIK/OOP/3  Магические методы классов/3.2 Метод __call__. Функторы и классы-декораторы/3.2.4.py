@@ -31,11 +31,23 @@ class LengthValidator:
         self.max_length = max_length
 
     def __call__(self, *args, **kwargs):
-
+        name = args[0]
+        if self.min_length <= len(name) <= self.max_length:
+            return True
+        return False
 
 
 class CharsValidator:
     def __init__(self, chars):
         self.chars = chars
 
+    def __call__(self, *args, **kwargs):
+        name = args[0]
+        if set(name).issubset(set(self.chars)):
+            return True
+        return False
 
+
+lg = LoginForm('Entry', validators=[LengthValidator(4, 30), CharsValidator(ascii_lowercase + digits)] )
+lg.post({'login': 'root', 'password': 'gatos'})
+print(lg.is_validate())
