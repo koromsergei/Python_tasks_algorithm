@@ -31,7 +31,7 @@ class Dimension:
         self.c = c
 
     def get_len(self):
-        return np.sqrt(pow(self.a, 2) + pow(self.b, 2) + pow(self.c, 2))
+        return self.a * self.b * self.c
 
     def __lt__(self, other):
         return self.get_len() < other.get_len()
@@ -40,6 +40,21 @@ class Dimension:
         return self.get_len() <= other.get_len()
 
 
-d1 = Dimension(1, 2, 3)
-d2 = Dimension(4, 5, 6)
-print(d1 < d2)
+class ShopItem:
+    def __init__(self, name: str, price: (int, float), dim: Dimension):
+        self.name = name
+        self.price = price
+        self.dim = dim
+
+
+snickers = ShopItem('Snickers', 1024, Dimension(40, 30, 120))
+umbrella = ShopItem('Umbrella', 500, Dimension(10, 20, 50))
+refrigerator = ShopItem('Refrigerator', 40000, Dimension(2000, 600, 500))
+chairs = ShopItem('Chair', 2000, Dimension(500, 200, 200))
+
+# print(snickers.dim.get_len())
+lst = [snickers, umbrella, refrigerator, chairs]
+lst_sorted = sorted(lst, key=lambda x: x.dim.get_len(), reverse=True)
+
+for i in lst_sorted:
+    print(i.name)
