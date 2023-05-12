@@ -17,8 +17,8 @@ def pl(y, y_d):
     return y_t
 
 
-for i in range(62, 65):
-    file_name = f"Spectrum_(LS6)-2023_04_13-ID_{i}.spc"
+for i in range(58, 77):
+    file_name = f"Spectrum_(LS6)-2023_05_02-ID_{i}.spc"
     file_name_d = 'Spectrum_(LS6)-2023_04_13-ID_40.spc'
 
     # file = fr"C:\Users\lysikova.dv\Documents\GitHub\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"

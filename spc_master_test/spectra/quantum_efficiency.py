@@ -37,15 +37,15 @@ laser_power_uj = [699, 599, 497, 399, 298, 198, 100, 91, 81, 71, 61, 51]
 
 inegr_intencity = []
 # Пропускание частицы
-lim_start = 2897
-lim_start = 2900
+# lim_start = 0
+lim_start = 2660
 # lim_end = 2990
-lim_end = 2970
+lim_end = 2750
 
-for i in range(126, 146):
-    # if i == 102 or i == 93 or i == 94 or i == 98 or i == 92 or i == 114:
-    #     continue
-    file_name = f"Spectrum_(LS6)-2023_04_18-ID_{i}.spc"
+for i in range(79, 94):
+    if i == 85:
+        continue
+    file_name = f"Spectrum_(LS6)-2023_05_02-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
     print(len(x))
@@ -67,13 +67,13 @@ for i in range(126, 146):
     plt.show()
 
 print(inegr_intencity)
-plt.plot(laser_power_uj, inegr_intencity, "o")
-plt.xscale('log')
-plt.yscale('log')
-# plt.xlabel("Power, mW")
-plt.xlabel("Power, mJ / cm ^2")
-plt.ylabel("Integrated intensity, a.u.")
-plt.show()
+# plt.plot(laser_power_uj, inegr_intencity, "o")
+# plt.xscale('log')
+# plt.yscale('log')
+# # plt.xlabel("Power, mW")
+# plt.xlabel("Power, mJ / cm ^2")
+# plt.ylabel("Integrated intensity, a.u.")
+# plt.show()
 
 
 
