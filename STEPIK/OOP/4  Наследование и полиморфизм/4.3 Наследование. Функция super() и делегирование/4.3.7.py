@@ -1,11 +1,14 @@
 def integer_params(func):
-    def inner(*args):
+    def inner(self, *args, **kwargs):
         for i in args:
             print(i, type(i) is not int)
             if type(i) is not int:
                 raise TypeError
-        return func(args)
-
+        for i in kwargs.values():
+            print(i, type(i) is not int)
+            if type(i) is not int:
+                raise TypeError
+        return func(self, *args, **kwargs)
     return inner
 
 
@@ -20,7 +23,7 @@ def integer_params_decorated(cls):
 @integer_params
 class Vector:
     def __init__(self, *args):
-        self.__coords = list(*args)
+        self.__coords = list(args)
 
     def __getitem__(self, item):
         return self.__coords[item]
@@ -35,6 +38,6 @@ class Vector:
 
 vector = Vector(1, 2)
 
-print(vector[1])
 vector[1] = 20.4
+vector.set_coords(1, 2.3)
 print(vector[1])
