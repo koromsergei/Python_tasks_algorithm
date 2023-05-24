@@ -38,14 +38,14 @@ laser_power_uj = [699, 599, 497, 399, 298, 198, 100, 91, 81, 71, 61, 51]
 inegr_intencity = []
 # Пропускание частицы
 # lim_start = 0
-lim_start = 2660
-# lim_end = 2990
-lim_end = 2750
+lim_start = 0
+lim_end = 469
+# lim_end = 2500
 
-for i in range(79, 94):
-    if i == 85:
-        continue
-    file_name = f"Spectrum_(LS6)-2023_05_02-ID_{i}.spc"
+for i in range(100, 108):
+    # if i == 85:
+    #     continue
+    file_name = f"Spectrum_(LS6)-2023_05_22-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
     print(len(x))
