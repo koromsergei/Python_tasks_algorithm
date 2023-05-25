@@ -25,7 +25,7 @@ class GeneralView:
         return self.__getattribute__(method_request)(request)
 
 
-class DetailView(RetriveMixin,UpdateMixin, GeneralView):
+class DetailView(RetriveMixin, UpdateMixin, GeneralView):
     allowed_methods = ('GET', 'PUT', )
 
 
