@@ -1,11 +1,12 @@
 def integer_params(func):
     def inner(self, *args, **kwargs):
+        print(args)
         for i in args:
-            print(i, type(i) is not int)
+            print(i, type(i) is not int, 'arg')
             if type(i) is not int:
                 raise TypeError
         for i in kwargs.values():
-            print(i, type(i) is not int)
+            print(i, type(i) is not int, 'kwa')
             if type(i) is not int:
                 raise TypeError
         return func(self, *args, **kwargs)
@@ -39,5 +40,5 @@ class Vector:
 vector = Vector(1, 2)
 
 vector[1] = 20.4
-vector.set_coords(1, 2.3)
+vector.set_coords(1, 2.3, reverse=False)
 print(vector[1])

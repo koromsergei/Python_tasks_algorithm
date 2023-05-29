@@ -14,4 +14,10 @@ class CustomTest:
 
 
 class TestAnsDigit(CustomTest):
-    def __init__(self, ):
+    def __init__(self, descr, ans_digit, max_error_digit=0.01):
+        super().__init__(descr)
+        self.ans_digit = ans_digit
+        self.max_error_digit = max_error_digit
+
+    def run(self):
+        ans = float(input())
