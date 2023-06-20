@@ -24,7 +24,8 @@ def photolum(y, y_d):
 
 # Темновой ток
 file_name_dark = "Spectrum_(LS6)-2023_06_17-ID_02.spc"
-file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_dark}"
+# file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name_dark}"
+file = rf"C:\Users\korom\Documents\Git\Python_tasks_algorithm\spc_master_test\spectra\{file_name_dark}"
 [xd, y_d] = get_spectra(file)
 lim_start = int(len(y_d) / 2)
 lim_end = 700
@@ -38,15 +39,16 @@ laser_power_uj = [699, 599, 497, 399, 298, 198, 100, 91, 81, 71, 61, 51]
 inegr_intencity = []
 # Пропускание частицы
 # lim_start = 0
-lim_start = 2700
-lim_end = 3200
+lim_start = 0
+lim_end = 371
 # lim_end = 2500
 
-for i in range(44, 58):
+for i in range(63, 69):
     # if i == 85:
     #     continue
     file_name = f"Spectrum_(LS6)-2023_06_17-ID_{i}.spc"
-    file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
+    # file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
+    file = rf"C:\Users\korom\Documents\Git\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
     print(len(x))
     # x = x[::-1]
