@@ -62,6 +62,7 @@ class MenuManager:
         pg.quit()
         sys.exit()
 
+
 class LevelListManager:
 
     def __init__(self):

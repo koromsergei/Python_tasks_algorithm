@@ -4,6 +4,7 @@ import pygame as pg
 from pygame import Rect
 # from enemy import Enemy
 
+
 class Platform:
     def __init__(self, position, size, texture):
         self.image = pg.image.load(texture)
@@ -42,7 +43,7 @@ class Trigger(Platform):
         if pg.Rect.colliderect(self.rect, enemy.rect):
             if time.time() - self.current_time > 1:
                 self.current_time = time.time()
-            enemy.walking_left, enemy.walking_right = enemy.walking_right, enemy.walking_left
+            enemy.walking_left, enemy.walking_right = enemy.walking_left, enemy.walking_right
 
     @property
     def ret_number(self):
