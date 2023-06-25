@@ -35,8 +35,10 @@ while True:
     print(pg.mouse.get_pos())
 
     pg.display.update()
-    clock.tick(FPS)
-
+    if state == 'menu':
+        clock.tick(FPS / 4)
+    else:
+        clock.tick(FPS)
 
 
 
