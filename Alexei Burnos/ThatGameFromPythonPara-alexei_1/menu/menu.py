@@ -1,6 +1,7 @@
 import sys
-
+import mouse as ms
 import pygame as pg
+
 
 from lib.constants import BUTTON_NEW_GAME_SIZE_WIDTH, SCALE, BUTTON_NEW_GAME_SIZE_HEIGHT, BUTTON_NEW_GAME_POSITION_Y, \
     BUTTON_NEW_GAME_POSITION_X, BUTTON_EXIT_SIZE_WIDTH, BUTTON_EXIT_POSITION_X, BUTTON_EXIT_POSITION_Y, \
@@ -37,10 +38,10 @@ class MenuManager:
             mouse_position = pg.mouse.get_pos()
             mouse_x, mouse_y = mouse_position
             for button in self.buttons:
-                if button.position[0] < mouse_x < button.position[0] +\
-                     button.size[0] and \
-                     button.position[1] < mouse_y < button.position[1] + \
-                     button.size[1]:
+                if button.position[0] < mouse_x < button.position[0] + \
+                        button.size[0] and \
+                        button.position[1] < mouse_y < button.position[1] + \
+                        button.size[1]:
 
                     button.clicked()
 

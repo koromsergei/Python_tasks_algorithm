@@ -32,7 +32,6 @@ while True:
         level_manager.start_level = -1
     state, parameters = manager.update(pressed_keys=keys, upped_keys=keys_up, mouse_pressed=mouse, mouse_upped=mouse_up)
     manager.draw(surface=screen)
-    print(pg.mouse.get_pos())
 
     pg.display.update()
     clock.tick(FPS)
