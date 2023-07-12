@@ -43,7 +43,7 @@ lim_start = 2900
 # lim_end = 371
 lim_end = 2999
 
-for i in range(73, 78):
+for i in range(108, 112):
     # if i == 85:
     #     continue
     file_name = f"Spectrum_(LS6)-2023_06_24-ID_{i}.spc"
