@@ -38,12 +38,12 @@ laser_power_uj = [699, 599, 497, 399, 298, 198, 100, 91, 81, 71, 61, 51]
 
 inegr_intencity = []
 # Пропускание частицы
-# lim_start = 0
-lim_start = 2900
+lim_start = 0
+# lim_start = 2900
 # lim_end = 371
-lim_end = 2999
+lim_end = 2000
 
-for i in range(108, 112):
+for i in range(108, 109):
     # if i == 85:
     #     continue
     file_name = f"Spectrum_(LS6)-2023_06_24-ID_{i}.spc"
