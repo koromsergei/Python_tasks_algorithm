@@ -41,19 +41,19 @@ inegr_intencity = []
 lim_start = 0
 # lim_start = 2900
 # lim_end = 371
-lim_end = 2000
+lim_end = 3085
 
-for i in range(108, 109):
-    # if i == 85:
+for i in range(162, 169):
+    # if i == 88:
     #     continue
-    file_name = f"Spectrum_(LS6)-2023_06_24-ID_{i}.spc"
+    file_name = f"Spectrum_(LS6)-2023_07_28-ID_{i}.spc"
     file = rf"C:\Users\sergej.koromyslov\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     # file = rf"C:\Users\korom\Documents\Git\Python_tasks_algorithm\spc_master_test\spectra\{file_name}"
     [x, y] = get_spectra(file)
     print(len(x))
-    # x = x[::-1]
+    x = x[::-1]
     x = x[lim_start:lim_end]
-    # y = y[::-1]
+    y = y[::-1]
     y = y[lim_start:lim_end]
     print(len(x))
     inegr_intencity.append(trapz(y, x))
