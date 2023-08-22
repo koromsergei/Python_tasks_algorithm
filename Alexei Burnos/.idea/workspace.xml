@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbf9e1af-27e3-44bd-bb65-f9793a9224b1" name="Changes" comment="" />
+    <list default="true" id="dbf9e1af-27e3-44bd-bb65-f9793a9224b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list_of_letters_combinations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list_to_word.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/random_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Alexei Burnos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Alexei Burnos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara" beforeDir="false" afterPath="$PROJECT_DIR$/ThatGameFromPythonPara" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/lib/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThatGameFromPythonPara/lib/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/lib/game_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThatGameFromPythonPara/lib/game_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/brick_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/enemy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/enemy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/enemy_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/floor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/healt_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/platform.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/player.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/player.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/player_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/text_surface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/images/wallpaper_cut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/levels/levels.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/sounds/Back_music_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThatGameFromPythonPara/source/sounds/Bym_1.mp3" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,26 +37,32 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ShbZCoiLo1eR2LgaO8e34J1TBK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/korom/Documents/Git/Python_tasks_algorithm/Alexei Burnos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sergej.koromyslov/Python_tasks_algorithm/Alexei Burnos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.list_of_letters_combinations">
+}</component>
+  <component name="RunManager" selected="Python.scratch">
     <configuration name="list_of_letters_combinations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Alexei Burnos" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -46,6 +77,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/list_of_letters_combinations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Alexei Burnos" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cannon-1/cannon-1" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cannon-1/cannon-1/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,8 +131,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.list_of_letters_combinations" />
         <item itemvalue="Python.scratch" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.list_of_letters_combinations" />
       </list>
     </recent_temporary>
   </component>
@@ -92,14 +146,31 @@
       <option name="presentableId" value="Default" />
       <updated>1689601812712</updated>
       <workItem from="1689601813716" duration="5508000" />
+      <workItem from="1691672865997" duration="130000" />
+      <workItem from="1691673006130" duration="2977000" />
+      <workItem from="1691676955435" duration="1338000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Alexei_Burnos$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1689604883222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Alexei_Burnos$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1691678892281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Alexei_Burnos$parcer_dentist.coverage" NAME="parcer_dentist Coverage Results" MODIFIED="1691672583940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../STEPIK" />
+    <SUITE FILE_PATH="coverage/Alexei_Burnos$quantum_efficiency.coverage" NAME="quantum_efficiency Coverage Results" MODIFIED="1690894365497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../spc_master_test/spectra" />
     <SUITE FILE_PATH="coverage/Alexei_Burnos$list_of_letters_combinations.coverage" NAME="list_of_letters_combinations Coverage Results" MODIFIED="1689607617773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Alexei_Burnos$main.coverage" NAME="main Coverage Results" MODIFIED="1691673990987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cannon-1/cannon-1" />
   </component>
 </project>
